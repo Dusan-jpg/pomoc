@@ -1,0 +1,221 @@
+/* Reset osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif; /* Primena Lora fonta na ceo sajt */
+}
+
+body {
+    background: #f8f8f8;
+    color: #333;
+}
+
+/* HEADER */
+/* Uvoz Google fonta */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px; /* Povećan font za logo */
+    font-weight: 700; /* Povećana debljina samo za logo */
+    color: #333;
+    font-family: 'Lora', serif;
+}
+
+/* Navigacioni meni */
+/* Navigacioni meni */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Dodajemo razmak između stavki */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    font-family: 'Lora', serif;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #27ae60;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 60vh;
+}
+
+.hero-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 700; 
+    font-family: 'Lora', serif;
+    border-radius: 5px;
+}
+
+/* FEATURES SECTION */
+.features {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 20px; /* Smanjen padding da smanjimo razmak ispod */
+    margin-bottom: 20px; /* Dodato da se približi galeriji */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around; /* Raspoređuje ikonice ravnomerno */
+    text-align: center;
+    padding: 25px 25px; /* Povećava padding sekcije da se ne lepe uz ivice */
+}
+
+.feature img {
+    width: 50px;
+    margin-bottom: 10px; 
+}
+
+.feature p {
+    font-size: 14px; /* Prilagođena veličina teksta */
+    line-height: 1.5; /* Razmak između redova */
+    color: #666; /* Blago tamnija siva */
+    max-width: 220px; /* Ograničava širinu teksta da bi se prelomi u tri reda */
+    margin: 0 auto; /* Centriranje teksta ispod ikonice */
+}
+
+
+/* GALERIJA I NASLOV "RECENT WORK" */
+.gallery {
+    padding: 50px 8%; /* Dodaje prostor levo i desno */
+    position: relative;
+    width: 84%; /* Podesi širinu tako da linija završi tačno kod četvrte slike */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* NASLOV "RECENT WORK" PORAVNANJE */
+.gallery h2 {
+    text-align: left;
+    margin: 0; /* Uklanjanje margine */
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* SIVA LINIJA ISPOD NASLOVA */
+.gallery h2::after {
+    content: "";
+    display: block;
+    width: 100%; /* Linija se prostire do kraja četvrte slike */
+    height: 2px; /* Debljina linije */
+    background: #ccc; /* Siva boja linije */
+    margin-top: 10px; /* Razmak između teksta i linije */
+}
+
+/* GALERIJA SLIKA */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 slike u redu */
+    gap: 40px; /* Povećava razmak između slika */
+    justify-content: center; /* Centriranje slika */
+}
+
+/* GALERIJSKI ITEM */
+.gallery-item {
+    background: none; /* Uklanja belu pozadinu */
+    padding: 0; /* Uklanja unutrašnji razmak */
+    box-shadow: none; /* Uklanja senku ako postoji */
+}
+
+/* SLIKE U GALERIJI */
+.gallery-item img {
+    width: 100%; /* Smanjuje slike */
+    max-width: 250px; /* Ograničava maksimalnu širinu */
+    display: block;
+    margin: 0 auto; /* Centriranje slika u kontejneru */
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet verzija */
+@media (max-width: 1024px) {
+    .features {
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        width: 50%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telefon verzija */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
